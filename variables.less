@@ -1,0 +1,18 @@
+@primary-color: #fbfbfb;
+@secondary-color: #6c92d3;
+@tertiary-color: #a7b8d7;
+@title-font: Georgia, Arial, Helvetica, sans-serif;
+@body-font: Georgia, 'Times New Roman', Times, serif;
+@primary-hover-color: darken(@primary-color, 20%);
+@secondary-hover-color: darken(@secondary-color, 20%);
+.backdrop-color (@text-color) when (Lightness(@text-color)>= 50%) {
+    background-color: @secondary-color;
+}
+.backdrop-color (@text-color) when (Lightness(@text-color)< 50%) {
+    background-color: @primary-color;
+}
+.rounded-corners (@radius:10px) {
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+    border-radius: @radius;
+}

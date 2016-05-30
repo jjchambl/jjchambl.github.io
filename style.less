@@ -1,0 +1,129 @@
+@import 'variables.less';
+* {
+    margin: 0;
+    padding: 0;
+    transition-duration: .5s;
+}
+html {
+    line-height: 1;
+    background-color: gray;
+}
+.navbar {
+    .backdrop-color(@primary-color);
+    padding: 3px;
+    border: 1px solid white;      
+ }
+ .navbar-default .navbar-nav li a {
+        color: @primary-color;
+        &:hover {
+            color:@primary-hover-color;  
+        }         
+ }
+ .navbar-default .navbar-toggle {
+     background-color: @tertiary-color;
+ }
+ .nav-header {
+     position: absolute;
+     color: @primary-color;
+     font-family: @title-font;
+     width: 3em;
+     img {
+         height: 3em;
+         &:hover {             
+             height: 3em;
+             border-radius: 10px;
+         }
+     }
+ }
+ .space {
+     height: 4em;
+ }
+ .content {   
+    position:relative;
+    padding-top: 10em; 
+    font-family: @body-font;
+    background-color: @primary-color;     
+}
+.content h1 {
+    line-height: 10%;
+}
+.content h2 {
+    border-top: 1px solid @secondary-color;
+    padding: .75em 0;    
+}
+.center {
+    text-align: center;
+    margin: 0 auto;
+}
+.text {
+    padding: .5em 0 1em 0;// text-align: left;
+}
+.italic {
+    font-style: italic;
+}
+.indent {
+    text-indent: 15px;
+}
+a {
+    text-decoration: none;
+    color: black;   
+    &:visited {
+        text-decoration: none;        
+    }
+    &:hover {
+        text-decoration: none;
+    }
+}
+h2 {
+    text-decoration: none;
+    &:hover {
+        text-decoration:none;
+    }
+}
+ul {
+    list-style: none;
+}
+.form {
+    font-family: @body-font;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;  
+    height: 300px;
+    width: 335px;
+    border:1px solid;
+    margin-right: auto;
+    margin-left: auto;
+    .backdrop-color(@primary-color);
+    .rounded-corners;
+input {
+    width: 300px;
+}
+    #name {
+        margin-top: 20px;
+    }
+} 
+textarea {
+    width: 300px;
+}
+button.btn {
+    width: 100px;
+    height: 45px;
+    background-color: #aeaeae;
+    &:hover {
+        background-color: @primary-hover-color;
+        .rounded-corners;
+    }
+}
+.footer {    
+    padding:10px;
+    position: relative;    
+    border: 1px @secondary-color;
+    border-style:solid none none none;
+    a {
+        color:black;
+        padding: 10px;
+        &:hover {
+            color:@primary-hover-color;
+        }
+    } 
+}
