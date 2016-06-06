@@ -33,6 +33,7 @@ html {
 .nav-header img:hover {
   height: 3em;
   border-radius: 10px;
+  transform: scale(1.3);
 }
 .space {
   height: 4em;
