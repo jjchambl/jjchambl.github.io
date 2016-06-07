@@ -4,9 +4,16 @@
     padding: 0;
     transition-duration: .5s;
 }
+.page {
+    width: 100%;
+    overflow-x: hidden;
+}
 html {
     line-height: 1;
     background-color: gray;
+}
+p, li {
+    font-size: 1.9rem;
 }
 .navbar {
     .backdrop-color(@primary-color);
@@ -32,7 +39,7 @@ html {
          &:hover {             
              height: 3em;
              border-radius: 10px;
-             transform: scale(1.3);
+             transform: scale(1.3) translate(10px, 7px) rotate(-15deg);
          }
      }
  }
@@ -67,7 +74,6 @@ html {
 }
 a {
     text-decoration: none;
-    color: black;   
     &:visited {
         text-decoration: none;        
     }
@@ -113,6 +119,7 @@ button.btn {
     &:hover {
         background-color: @primary-hover-color;
         .rounded-corners;
+        transform: scale(1.1);
     }
 }
 .footer {    
@@ -123,8 +130,36 @@ button.btn {
     a {
         color:black;
         padding: 10px;
+    }
+    img {
+        height: 35px;
+        width: auto;
         &:hover {
-            color:@primary-hover-color;
+            transform: scale(1.3);
         }
     } 
+}
+@media screen and (max-width: 768px) {
+    #skills {
+        text-align: center;
+    }
+}
+@media screen and (max-width: 700px) {
+    #subtitle {
+        display: none;
+    }
+    .form {
+        width: 65%;
+        input {
+           width: 95%; 
+        }
+        textarea {
+            width: 95%;
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    .form {
+        width: 95%;
+    }
 }
