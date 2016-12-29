@@ -167,3 +167,26 @@ button.btn:hover {
     width: 95%;
   }
 }
+/* Additional styles for Slappey test; delete when irrelevant */
+body {
+  height: 100vh;
+}
+.container {
+  padding-top: 25px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.link h4 {
+  padding: 12px;
+  padding-top: 25px;
+  height: 125px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: dodgerblue;
+  color: white;
+}
+@media screen and (max-width: 768px) {
+  body {
+    height: initial;
+    overflow: scroll;
+  }
+}
