@@ -184,9 +184,23 @@ body {
   background-color: dodgerblue;
   color: white;
 }
+.chat-container {
+  position:fixed; 
+  bottom:0; 
+  right: 0; 
+  z-index:2500;
+}
 @media screen and (max-width: 768px) {
   body {
     height: initial;
     overflow: scroll;
+  }
+  .chat-container {
+    position: relative;
+    bottom: initial;
+    right: initial;
+  }
+  iframe {
+    width: 100%;
   }
 }
