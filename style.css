@@ -198,10 +198,11 @@ body {
 }
 @media screen and (max-width: 768px) {
   body {
-    height: initial;
+    height: 1000px;
     overflow: scroll;
   }
   .chat-container {
+    position:absolute;
     bottom: initial;
     right: initial;
     text-align: center;
