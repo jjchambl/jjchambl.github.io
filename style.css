@@ -176,19 +176,25 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .link h4 {
-  padding: 12px;
-  padding-top: 25px;
+  /*padding: 12px;
+  padding-top: 25px;*/
   height: 125px;
   border-radius: 5px;
   text-align: center;
   background-color: dodgerblue;
   color: white;
+  line-height: 125px;
+  vertical-align: middle;
+  font-size: 25px;
 }
 .chat-container {
   position:fixed; 
   bottom:0; 
-  right: 0; 
+  right: 5px; 
   z-index:2500;
+}
+#chatLink {
+  cursor: pointer;
 }
 @media screen and (max-width: 768px) {
   body {
@@ -196,9 +202,9 @@ body {
     overflow: scroll;
   }
   .chat-container {
-    position: relative;
     bottom: initial;
     right: initial;
+    text-align: center;
   }
   iframe {
     width: 100%;
