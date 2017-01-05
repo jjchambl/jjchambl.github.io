@@ -198,15 +198,14 @@ body {
 }
 @media screen and (max-width: 768px) {
   body {
-    height: 1000px;
     overflow: scroll;
   }
-  .chat-container {
-    position:absolute;
+  /*.chat-container {
     bottom: initial;
     right: initial;
     text-align: center;
-  }
+    height: 100%;
+  }*/
   iframe {
     width: 100%;
   }
