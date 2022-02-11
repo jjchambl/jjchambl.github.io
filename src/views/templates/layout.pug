@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title= title
+
+    meta(content="text/html;charset=utf-8" http-equiv="Content-Type")
+    meta(content="utf-8" http-equiv="encoding")
+    meta(name="viewport" content="width=device-width")
+    //- link(rel="shortcut icon" href="http://localhost:3000/favicons/favicon.ico")
+    //- link(rel="apple-touch-icon" sizes="114x114" href="http://localhost:3000/favicons/apple-touch-icon-114x114.png")
+    //- link(rel="apple-touch-icon" sizes="144x144" href="http://localhost:3000/favicons/apple-touch-icon-144x144.png")
+    //- link(rel="apple-touch-icon" sizes="120x120" href="http://localhost:3000/favicons/apple-touch-icon-120x120.png")
+    //- link(rel="apple-touch-icon" sizes="152x152" href="http://localhost:3000/favicons/apple-touch-icon-152x152.png")
+    //- link(rel="apple-touch-icon" sizes="180x180" href="http://localhost:3000/favicons/apple-touch-icon-180x180.png")
+    //- link(rel="icon" type="image/png" href="http://localhost:3000/favicons/favicon-96x96.png" sizes="96x96")
+    //- link(rel="icon" type="image/png" href="http://localhost:3000/favicons/favicon-16x16.png" sizes="16x16")
+    //- link(rel="icon" type="image/png" href="http://localhost:3000/favicons/favicon-32x32.png" sizes="32x32")
+    //- Fonts and icons
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons')
+
+    script(src='https://cdn.jsdelivr.net/npm/sweetalert2@9')
+    script(src='https://rawgit.com/moment/moment/2.2.1/min/moment.min.js')
+  body
+    .wrapper
+      .main-panel
+        include navbar
+        .content.text-center
+          block content
+
+    //- Core JS Files
+    script(src='https://rawgit.com/moment/moment/2.2.1/min/moment.min.js')

@@ -1,0 +1,47 @@
+{
+  "name": "jak-resume",
+  "version": "1.0.0",
+  "description": "This is a Resume I coded using HTML and CSS, styled with Twitter Bootstrap and compiled with LESS. This Resume serves to highlight my  training at Depot/U that began in February 2016, as well as some projects that I have been working on. Feel free to contact me using the provided information in the html document (clicking on Resume.html opens the document in your default web browser). For a larger photo, click the one in the navbar.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjchambl/jjchambl.github.io.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "7.16.12",
+    "@babel/plugin-syntax-dynamic-import": "7.8.3",
+    "@babel/preset-env": "7.16.11",
+    "babel-loader": "8.2.3",
+    "clean-webpack-plugin": "4.0.0",
+    "copy-webpack-plugin": "10.2.4",
+    "css-loader": "6.6.0",
+    "file-loader": "6.2.0",
+    "gh-pages": "^3.2.3",
+    "html-webpack-plugin": "^5.5.0",
+    "html-webpack-pug-plugin": "^4.0.0",
+    "image-minimizer-webpack-plugin": "^3.2.3",
+    "imagemin-svgo": "^10.0.1",
+    "lodash": "^4.17.21",
+    "node-sass": "7.0.1",
+    "pug-html-loader": "^1.1.5",
+    "pug-loader": "^2.4.0",
+    "raw-loader": "^4.0.2",
+    "sass-loader": "12.4.0",
+    "style-loader": "3.3.1",
+    "url-loader": "4.1.1",
+    "webpack": "5.68.0",
+    "webpack-cli": "4.9.2",
+    "webpack-dev-server": "4.7.4",
+    "webpack-merge": "5.8.0"
+  },
+  "author": "Jacob Chambliss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjchambl/jjchambl.github.io/issues"
+  },
+  "homepage": "https://github.com/jjchambl/jjchambl.github.io#readme"
+}
