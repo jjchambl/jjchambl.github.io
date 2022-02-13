@@ -1,3 +1,25 @@
-nav
-  .container
-    h1 Hello, Nav
+nav.navbar.navbar-default.navbar-fixed-top
+  .nav-header
+    a(href='https://d2s676v7xu9ub0.cloudfront.net/346-chambliss.jpeg' target='blank')
+      img(src='https://d2s676v7xu9ub0.cloudfront.net/346-chambliss-headshot.jpg')
+  button(
+    type='button'
+    class='navbar-toggle collapsed'
+    data-toggle='collapse'
+    data-target='#bs-example-navbar-collapse-1'
+    aria-expanded='false'
+  )
+    span.sr-only Toggle navigation
+    span.icon-bar
+    span.icon-bar
+    span.icon-bar
+  .collapse.navbar-collapse#bs-example-navbar-collapse-1
+    ul.nav.navbar-nav.navbar-right
+      li
+        a(href='#about') About
+      li
+        a(href='#skills') Skills
+      li
+        a(href='#work') Work
+      li
+        a(href='#resume') Resume

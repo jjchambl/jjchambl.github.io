@@ -1,4 +1,4 @@
-@use '_index.scss';
+@import 'variables';
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +23,7 @@ p, li {
  .navbar-default .navbar-nav li a {
         color: $primary-color;
         &:hover {
-            color:$primary-hover-color;
+            color: $primary-hover-color;
         }
  }
  .navbar-default .navbar-toggle {
@@ -91,6 +91,7 @@ ul {
     list-style: none;
 }
 .form {
+  @extend %rounded-corners;
     font-family: $body-font;
     text-align: center;
     text-transform: uppercase;
@@ -101,14 +102,13 @@ ul {
     margin-right: auto;
     margin-left: auto;
     background-color: $primary-color;
-    .rounded-corners;
 input {
     width: 300px;
 }
     #name {
         margin-top: 20px;
     }
-} 
+}
 textarea {
     width: 300px;
 }
@@ -117,14 +117,14 @@ button.btn {
     height: 45px;
     background-color: #aeaeae;
     &:hover {
+        @extend %rounded-corners;
         background-color: $primary-hover-color;
-        .rounded-corners;
         transform: scale(1.1);
     }
 }
-.footer {    
+.footer {
     padding:10px;
-    position: relative;    
+    position: relative;
     border: 1px $secondary-color;
     border-style:solid none none none;
     a {

@@ -3,8 +3,8 @@ const webpack = require('webpack');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 
-const dirNode = 'node_modules';
 const dirApp = path.join(__dirname, 'src');
+const dirModules = path.join(__dirname, 'node_modules');
 const dirAssets = path.join(__dirname, 'assets');
 
 /**
@@ -13,7 +13,6 @@ const dirAssets = path.join(__dirname, 'assets');
 module.exports = (env) => {
   // Is the current build a development build
   const IS_DEV = !!env.dev;
-  const jsPath = IS_DEV ? 'local_path' : 'dist_path'
 
   return {
     // No need for an entrypoint; let the plugin do the heavy lifting
@@ -23,43 +22,37 @@ module.exports = (env) => {
     },
 
     resolve: {
-      modules: [dirNode, dirApp, dirAssets],
+      modules: [dirApp, dirModules, dirAssets],
     },
 
     plugins: [
       new webpack.DefinePlugin({ IS_DEV }),
 
-      new ImageMinimizerPlugin({
-        minimizer: {
-          implementation: ImageMinimizerPlugin.imageminMinify,
-          options: {
-            plugins: [
-              // SVGO options: "https://github.com/svg/svgo#what-it-can-do"
-              [
-                'imagemin-svgo',
-                {
-                  plugins: [
-                    {
-                      removeViewBox: false,
-                      removeXMLNS: true,
-                    },
-                  ],
-                },
-              ]
-            ]
-          }
-        }
-      }),
+      // new ImageMinimizerPlugin({
+      //   minimizer: {
+      //     implementation: ImageMinimizerPlugin.imageminMinify,
+      //     options: {
+      //       plugins: [
+      //         // SVGO options: "https://github.com/svg/svgo#what-it-can-do"
+      //         [
+      //           'imagemin-svgo',
+      //           {
+      //             plugins: [
+      //               {
+      //                 removeViewBox: false,
+      //                 removeXMLNS: true,
+      //               },
+      //             ],
+      //           },
+      //         ]
+      //       ]
+      //     }
+      //   }
+      // }),
 
       new HTMLWebpackPlugin({
         filename: 'index.html',
         template: './src/views/main.pug',
-        inject: true
-      }),
-
-      new HTMLWebpackPlugin({
-        filename: 'secondary.html',
-        template: './src/views/secondary.pug',
         inject: true
       })
     ],
@@ -69,16 +62,19 @@ module.exports = (env) => {
         // PUG
         {
           test: /\.pug/,
-          use: {
-            loader: 'pug-loader',
-            options: {
-              // options to pass to the compiler same as: https://pugjs.org/api/reference.html
-              data: {
-                title: 'My Webpage',
-                filePath: jsPath
-              } // set of data to pass to the pug render.
+          use: [
+            'html-loader',
+            {
+              loader: 'pug-html-loader',
+              options: {
+                // options to pass to the compiler same as: https://pugjs.org/api/reference.html
+                data: {
+                  title: 'Jak webby',
+                  assetPath: dirAssets
+                } // set of data to pass to the pug render.
+              }
             }
-          }
+          ]
         },
         // BABEL
         {
@@ -150,6 +146,29 @@ module.exports = (env) => {
 
     optimization: {
       runtimeChunk: 'single',
+      minimizer: [
+        new ImageMinimizerPlugin({
+          minimizer: {
+            implementation: ImageMinimizerPlugin.squooshMinify,
+            options: {
+              encodeOptions: {
+                mozjpeg: {
+                  // That setting might be close to lossless, but it’s not guaranteed
+                  // https://github.com/GoogleChromeLabs/squoosh/issues/85
+                  quality: 100,
+                },
+                webp: {
+                  lossless: 1,
+                },
+                avif: {
+                  // https://github.com/GoogleChromeLabs/squoosh/blob/dev/codecs/avif/enc/README.md
+                  cqLevel: 0,
+                },
+              },
+            },
+          },
+        }),
+      ]
     },
   };
 };

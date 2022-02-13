@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title= title
+    title=title
 
     meta(content="text/html;charset=utf-8" http-equiv="Content-Type")
     meta(content="utf-8" http-equiv="encoding")
@@ -15,6 +15,8 @@ html
     //- link(rel="icon" type="image/png" href="http://localhost:3000/favicons/favicon-96x96.png" sizes="96x96")
     //- link(rel="icon" type="image/png" href="http://localhost:3000/favicons/favicon-16x16.png" sizes="16x16")
     //- link(rel="icon" type="image/png" href="http://localhost:3000/favicons/favicon-32x32.png" sizes="32x32")
+    //- Bootstrap CDN
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous")
     //- Fonts and icons
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons')
@@ -22,11 +24,13 @@ html
     script(src='https://cdn.jsdelivr.net/npm/sweetalert2@9')
     script(src='https://rawgit.com/moment/moment/2.2.1/min/moment.min.js')
   body
-    .wrapper
+    .page
       .main-panel
         include navbar
-        .content.text-center
+        .content
           block content
 
     //- Core JS Files
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous")
     script(src='https://rawgit.com/moment/moment/2.2.1/min/moment.min.js')
