@@ -52,6 +52,7 @@ module.exports = (env) => {
 
       new HTMLWebpackPlugin({
         filename: 'index.html',
+        favicon: './assets/favicon.ico',
         template: './src/views/main.pug',
         inject: true
       })
