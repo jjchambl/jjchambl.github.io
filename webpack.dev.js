@@ -22,6 +22,7 @@ module.exports = (env) => {
       // static: '/',
       compress: true,
       host: '0.0.0.0',
+      hot: true
     },
 
     plugins: [
