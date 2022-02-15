@@ -1,0 +1,17 @@
+$primary-color: #ffffff;;
+$secondary-color: #ac8ccc;
+$tertiary-color: #b196cc;
+// $title-font: Calibri,Georgia,sans-serif;
+$title-font: Cambria,Georgia,serif;
+$body-font: Cambria,Georgia,serif;
+$primary-hover-color: darken($primary-color, 20%);
+$secondary-hover-color: darken($secondary-color, 20%);
+$radius: 10px;
+%backdrop-color {
+    background-color: $secondary-color;
+}
+%rounded-corners {
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
