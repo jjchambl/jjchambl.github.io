@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --progress --env dev --config webpack.dev.js",
-    "build": "webpack --progress --env prod --config webpack.prod.js"
+    "build": "webpack --progress --env prod --config webpack.prod.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,7 @@
     "@babel/core": "7.16.12",
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
     "@babel/preset-env": "7.16.11",
+    "@squoosh/lib": "^0.4.0",
     "babel-loader": "8.2.3",
     "clean-webpack-plugin": "4.0.0",
     "copy-webpack-plugin": "10.2.4",
@@ -50,5 +53,5 @@
   "bugs": {
     "url": "https://github.com/jjchambl/jjchambl.github.io/issues"
   },
-  "homepage": "https://github.com/jjchambl/jjchambl.github.io#readme"
+  "homepage": "https://github.com/jjchambl/jjchambl.github.io"
 }

@@ -13,6 +13,7 @@ const dirAssets = path.join(__dirname, 'assets');
 module.exports = (env) => {
   // Is the current build a development build
   const IS_DEV = !!env.dev;
+  const assetPath = IS_DEV ? 'http://localhost:8080' : ''
 
   return {
     // No need for an entrypoint; let the plugin do the heavy lifting
@@ -70,8 +71,8 @@ module.exports = (env) => {
               options: {
                 // options to pass to the compiler same as: https://pugjs.org/api/reference.html
                 data: {
-                  title: 'Jak webby',
-                  assetPath: dirAssets
+                  title: 'Jak\'s Info',
+                  assetPath
                 } // set of data to pass to the pug render.
               }
             }

@@ -13,7 +13,7 @@ module.exports = (env) => {
 
     // NOTE: if hosting in the cloud and serving statically, use the url of your cdn to import your js files here.
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'build'),
       filename: '[name].[contenthash].bundle.js',
       publicPath: '/'
     },
