@@ -19,11 +19,7 @@ module.exports = (env) => {
     },
 
     plugins: [
-      new CleanWebpackPlugin(),
-
-      new CopyPlugin({
-        patterns: [{ from: path.join(__dirname, 'assets'), to: 'assets' }],
-      })
+      new CleanWebpackPlugin()
     ],
   });
 };

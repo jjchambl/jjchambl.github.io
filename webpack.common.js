@@ -5,7 +5,6 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 
 const dirApp = path.join(__dirname, 'src');
 const dirModules = path.join(__dirname, 'node_modules');
-const dirAssets = path.join(__dirname, 'assets');
 
 /**
  * Webpack Configuration
@@ -13,7 +12,6 @@ const dirAssets = path.join(__dirname, 'assets');
 module.exports = (env) => {
   // Is the current build a development build
   const IS_DEV = !!env.dev;
-  const assetPath = IS_DEV ? 'http://localhost:8080' : ''
 
   return {
     // No need for an entrypoint; let the plugin do the heavy lifting
@@ -23,37 +21,15 @@ module.exports = (env) => {
     },
 
     resolve: {
-      modules: [dirApp, dirModules, dirAssets],
+      modules: [dirApp, dirModules],
     },
 
     plugins: [
       new webpack.DefinePlugin({ IS_DEV }),
 
-      // new ImageMinimizerPlugin({
-      //   minimizer: {
-      //     implementation: ImageMinimizerPlugin.imageminMinify,
-      //     options: {
-      //       plugins: [
-      //         // SVGO options: "https://github.com/svg/svgo#what-it-can-do"
-      //         [
-      //           'imagemin-svgo',
-      //           {
-      //             plugins: [
-      //               {
-      //                 removeViewBox: false,
-      //                 removeXMLNS: true,
-      //               },
-      //             ],
-      //           },
-      //         ]
-      //       ]
-      //     }
-      //   }
-      // }),
-
       new HTMLWebpackPlugin({
         filename: 'index.html',
-        favicon: './assets/favicon.ico',
+        favicon: './favicon.ico',
         template: './src/views/main.pug',
         inject: true
       })
@@ -71,8 +47,7 @@ module.exports = (env) => {
               options: {
                 // options to pass to the compiler same as: https://pugjs.org/api/reference.html
                 data: {
-                  title: 'Jak\'s Info',
-                  assetPath
+                  title: 'Jak\'s Resume'
                 } // set of data to pass to the pug render.
               }
             }
@@ -118,10 +93,7 @@ module.exports = (env) => {
             {
               loader: 'sass-loader',
               options: {
-                sourceMap: IS_DEV,
-                sassOptions: {
-                  includePaths: [dirAssets],
-                },
+                sourceMap: IS_DEV
               },
             },
           ],
