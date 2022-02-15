@@ -6,20 +6,36 @@ nav.navbar.navbar-default.navbar-fixed-top
     type='button'
     class='navbar-toggle collapsed'
     data-toggle='collapse'
-    data-target='#bs-example-navbar-collapse-1'
+    data-target='#bs-navbar-collapse'
     aria-expanded='false'
   )
     span.sr-only Toggle navigation
     span.icon-bar
     span.icon-bar
     span.icon-bar
-  .collapse.navbar-collapse#bs-example-navbar-collapse-1
-    ul.nav.navbar-nav.navbar-right
+  .collapse.navbar-collapse#bs-navbar-collapse
+    ul.nav.navbar-nav.navbar-.center
       li
-        a(href='#about') About
+        a(
+          href='#about'
+          data-toggle='collapse'
+          data-target='#bs-navbar-collapse'
+        ) About
       li
-        a(href='#skills') Skills
+        a(
+          href='#skills'
+          data-toggle='collapse'
+          data-target='#bs-navbar-collapse'
+        ) Skills
       li
-        a(href='#work') Work
+        a(
+          href='#work'
+          data-toggle='collapse'
+          data-target='#bs-navbar-collapse'
+        ) Work
       li
-        a(href='#experience') Experience
+        a(
+          href='#experience'
+          data-toggle='collapse'
+          data-target='#bs-navbar-collapse'
+        ) Experience
