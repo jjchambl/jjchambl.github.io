@@ -15,6 +15,9 @@ html {
 p, li {
     font-size: 1.9rem;
 }
+li {
+  margin-bottom: 8px;
+}
 .navbar {
     background-color: $secondary-color;
     padding: 3px;
@@ -56,7 +59,7 @@ p, li {
     line-height: 10%;
 }
 .content h2 {
-    border-top: 1px solid $secondary-color;
+    // border-top: 1px solid $secondary-color;
     padding: .75em 0;
 }
 .center {
@@ -64,7 +67,11 @@ p, li {
     margin: 0 auto;
 }
 .text {
-    padding: .5em 0 1em 0;// text-align: left;
+    padding: .5em 0 1em 0;
+    text-align: left;
+    p {
+      margin: 0 0 15px;
+    }
 }
 .italic {
     font-style: italic;
